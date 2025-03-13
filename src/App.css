@@ -1,0 +1,274 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Body background and center alignment */
+body {
+  background-color: #f4f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 20px;
+  overflow: hidden; /* Prevent background scroll when form is open */
+}
+
+/* Main app container */
+.app-container {
+  background-color: white;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 40px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #2d3a3a;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Error message */
+.error {
+  color: #e74c3c;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* User list styling */
+.user-list {
+  margin-bottom: 30px;
+}
+
+.user-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.user-list li {
+  background-color: #f9fafb;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.user-list li:hover {
+  background-color: #e0e4e8;
+}
+
+.user-list li span {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+  padding: 30px;
+}
+
+.action-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.action-icons i {
+  font-size: 1.4rem;
+  color: #007bff;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.action-icons i:hover {
+  transform: scale(1.2);
+  color: #0056b3;
+}
+
+.action-icons i.fa-trash {
+  color: #e74c3c;
+}
+
+.action-icons i.fa-trash:hover {
+  color: #c0392b;
+}
+
+/* Add User Button */
+.add-user-btn {
+  background-color: #007bff;
+  color: white;
+  margin-left: 700px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.add-user-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Form container as a card/modal */
+.user-form-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Close Button (X) */
+.user-form-card .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.4rem;
+  color: #333;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.user-form-card .close-btn:hover {
+  color: #e74c3c;
+  transform: scale(1.2);
+}
+
+.user-form-card h2 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #333;
+  text-align: center;
+}
+
+
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+input[placeholder] {
+  color: #bbb;
+}
+
+/* Buttons inside the form */
+button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* Styling for buttons */
+form button {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+  transform: translateY(-2px);
+}
+
+form button:active {
+  transform: translateY(1px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .app-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  button[type="submit"] {
+    padding: 10px;
+  }
+
+  .user-list li {
+    font-size: 1rem;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+}
